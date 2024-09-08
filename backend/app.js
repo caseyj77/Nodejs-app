@@ -1,7 +1,11 @@
 const express = require('express');
+const path = require('path');
 
 //creating express server named app
 const app = express();
+
+//serve static files from the "frontend/public" directory
+app.use(express.static(path.join(__dirname, '../frontend/public')));
 
 // Setting the port using environment variable or default to 3000
 const PORT = process.env.PORT || 3000;
