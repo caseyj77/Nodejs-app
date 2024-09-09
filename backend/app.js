@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const sequelize = require('./config/db'); // a sequelize connection to the Database
 
 //creating express server named app
 const app = express();
@@ -17,7 +18,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());  // This handles JSON body parsing as well
 
 
-// Set app to apply to the configured port
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// Sync Sequelize models with the database
+sequelize.sync()
+  .then(() => {
+    console.log('Connected to the AWS RDS database successfully.');
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });

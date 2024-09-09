@@ -3,14 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Home Page</title>
 </head>
 <body>
-  <div id="app">
-    <!-- Vue will mount here -->
-    <h1>{{ message }}</h1>
+  <header>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="/login">Create Account/Sign In</a>
+    </nav>
+  </header>
+  <div class="container">
+    <aside class="sidebar">
+      <ul>
+        <li><a href="#">Learning Objectives</a></li>
+        <li><a href="#">Course Map</a></li>
+        <li><a href="#">Placeholder 1</a></li>
+        <li><a href="#">Placeholder 2</a></li>
+        <li><a href="#">Placeholder 3</a></li>
+      </ul>
+    </aside>
+  
+  <main class="content">
+    <div id="app">
+      <!-- Vue will mount here -->
+      <h1>{{ message }}</h1>
+    </div>
+  </main>
   </div>
-
+  
   <!-- Include Vue.js from CDN -->
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script src="./app.js"></script>
