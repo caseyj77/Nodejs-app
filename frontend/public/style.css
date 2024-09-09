@@ -13,12 +13,26 @@ body {
 header {
   background-color: #35495e; /* Vue.js Pickled Bluewood */
   padding: 20px;
-  text-align: center;
   position: fixed;
   top: 0;
   left: 0;
   right: 0; /* Stretches header across the top */
   z-index: 1; /* Keeps the header above other content */
+}
+
+/* Header container for logo and navigation */
+.header-container {
+  display: flex;
+  justify-content: space-between; /* Space between logo and navigation */
+  align-items: center; /* Vertically center logo and navigation */
+  padding: 0 20px;  /* Optional: Adds horizontal padding */
+}
+
+/* Site logo on the left */
+#site-logo {
+  width: 75px;  /* Adjust width as necessary */
+  height: auto;  /* Maintain aspect ratio */
+  display: block;
 }
 
 /* Navigation styles */
@@ -32,7 +46,7 @@ nav a {
   font-family: 'Roboto', sans-serif; /* Apply Roboto font to navigation links */
 }
 
-/* Hover effect */
+/* Hover effect on navigation links */
 nav a:hover {
   color: #eecb00; /* Vue.js Sunflower Yellow */
 }
@@ -51,7 +65,7 @@ nav a:hover {
   padding: 20px;
   color: white;
   position: fixed; /* Sidebar stays fixed on the left */
-  top: 60px; /* Aligns the sidebar to start below the header */
+  top: 80px; /* Aligns the sidebar to start below the header */
   left: 0;
 }
 
